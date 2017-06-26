@@ -1,0 +1,13 @@
+:host{
+    background-color: lightgrey;
+    min-height: 30px;
+}
+.social-image {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.copyright{
+    vertical-align: middle;
+}

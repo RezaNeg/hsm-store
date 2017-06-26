@@ -1,0 +1,10 @@
+:host {
+    display: block;
+    background-color: #ffffff; 
+    flex-grow: 1;
+}
+.body-style {
+    flex-grow: 1;
+    /*overflow: auto;*/
+
+}

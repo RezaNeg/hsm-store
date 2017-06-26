@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div id="products" class="row list-group">
+        <div *ngFor="let product of products; let i=index">
+            <div class="item  col-xs-4 col-lg-4">
+                <div class="thumbnail">             
+                        <!--<img class="group list-group-image prettyPhoto" src={{product.src}} alt="" (click)="open(i)"/>-->
+                        <img class="group list-group-image prettyPhoto" src={{product.src}} alt=""/>
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            {{product.name}}</h4>
+                        <p class="group inner list-group-item-text">
+                            {{product.desc}}</p>
+                        <div class="row">
+                            <div class="col-md-3"><strong>Quantity: </strong></div>
+                            <div class="col-md-6">
+                                <input type="number" min="0" class="form-control" [(ngModel)]="quantity">
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                    ${{product.price}}</p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>
+                                <button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

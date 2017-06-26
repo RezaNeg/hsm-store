@@ -1,0 +1,11 @@
+.image {
+  font-size: 2em;
+  transition: transform .3s ease-out;
+  display: inline-block;
+}
+
+.image:hover{
+    transform: translate(0, -5px);
+     cursor: pointer;
+}
+	 

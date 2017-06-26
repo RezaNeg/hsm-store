@@ -1,0 +1,25 @@
+<div *ngIf="selectedProduct">
+    
+    <div class="col-md-6 well col-md-offset-3">
+            <span class="badge">{{selectedProduct.id}}</span> <strong>{{selectedProduct.name}}</strong>
+            <p>{{selectedProduct.desc}}</p>
+            <p class="text-center">
+                <img class="image" width="400" height="300" src={{selectedProduct.src}} (click)="open()"/>
+            </p>
+            <div class="row">
+
+                <div class="col-md-6 col-md-offset-3">
+                    <label for="qtyInput">Quantity</label>
+                    <input type="number" min="0" class="form-control" id="qtyInput" [(ngModel)]="quantity">
+                </div>
+
+            </div>
+            <hr>
+            <div class="row">
+                <h1 class="badge">${{selectedProduct.price}}</h1>
+                <button (click)="addToCart(selectedProduct)" class="btn btn-md btn-primary">Add to Cart</button>
+                <button (click)="goBack()" class="btn btn-md btn-danger">BACK</button>
+            </div>
+    </div>
+
+</div>

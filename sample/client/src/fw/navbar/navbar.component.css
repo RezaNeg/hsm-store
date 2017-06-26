@@ -1,0 +1,48 @@
+
+:host {
+    display: block;
+    height: 80px;
+    color: white; 
+}
+.logo {
+    width: 200px;
+}
+.flag-image {
+    width: 22px;
+    height: 16px;
+}
+
+.flag {
+    margin-top: 14px;
+    vertical-align: center;
+}
+
+span.glyphicon {
+    margin-left: 2px;
+    font-size: 11px;
+}
+
+a, li {
+    cursor: pointer;
+    vertical-align: middle;
+}
+.img-circle {
+    width:30px;
+    height:30px;
+    border: 2px solid cadetblue;
+}
+.navbar-header{
+    height: 40px;
+    vertical-align: middle;
+    /*align-content: middle;*/
+
+}
+.glyphicon-shopping-cart{
+    font-size: 100px;
+}
+.thumbnail price{
+    color: black;
+}
+.vertical-center{
+    vertical-align: middle;
+}

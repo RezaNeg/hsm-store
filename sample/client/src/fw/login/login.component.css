@@ -1,0 +1,64 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/img/hotsauceBG.jpg');  
+    background-position: center center;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+.login-form {
+    min-width: 250px;
+    width: 350px; 
+    background-color: white;
+    opacity: .95;
+    padding: 20px;
+}
+
+a {
+    line-height: 28px;
+    text-decoration: none;
+}
+button.btn-block {
+    float: left;
+    margin-top: 5px;
+}
+
+.message {
+    float: right;
+}
+
+.ng-valid[required], .ng-valid.required{
+	border-left: 5px solid #42A948;
+}
+.ng-invalid:not(form){
+	border-left: 5px solid #a94442;
+	
+}
+.social-image {
+    width: 25px;
+    height: 25px;
+}
+
+.alert{
+    animation: 1s alertAnim forwards;  
+}
+
+@keyframes alertAnim {
+    from {
+        opacity: 0; 
+        transform: translateX(-20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+input{
+    margin: 0;
+}

@@ -1,0 +1,22 @@
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<span class="copyright">&copy; Hot Sauce Media 2017</span>
+			</div>
+			<div class="col-md-6">
+				<span class= "copyright social-image"><a *ngFor="let icon of frameworkConfigService.socialIcons" 
+					[href]="icon.link"
+					[title]="icon.alt">
+					<img 
+						class="social-image"
+						[src]="icon.imageFile"
+						[alt]="icon.alt">
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+

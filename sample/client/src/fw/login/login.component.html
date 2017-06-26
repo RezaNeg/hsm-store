@@ -1,0 +1,83 @@
+<div class="login-form"  @fadeInAnimation>
+  <img class="center-block" [src]="frameworkConfigService.logo" width=200px/>
+  <hr/>
+  <h4><span class="fa fa-sign-in"></span> Login</h4>
+	<form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)"  novalidate >
+		<div class="form-group">
+      <input 
+        type="email"
+        class="form-control" 
+        name="email" 
+        placeholder="Email" 
+        required="required" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" 
+        ngModel #email="ngModel">
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required">
+          Email is required!
+        </div>
+        <div [hidden]="!email.errors.pattern">
+          Email is not valid! 
+        </div>
+		  </div>
+		</div>
+		<div class="form-group">
+			<input 
+        type="password" 
+        class="form-control" 
+        name="password" 
+        placeholder="Password" 
+        required="required"  
+        ngModel #password="ngModel">
+      <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+        <div [hidden]="!password.errors.required">
+          Password is required!
+        </div>
+      </div>
+		</div>
+
+    <div *ngIf="formError" class="alert alert-danger">
+      {{ formError }}
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="!submitting">
+        <button type="submit" class="btn btn-block btn-default" [disabled]="!loginForm.form.valid">Login</button> 
+          <!--<span class= " ">
+            <div *ngFor="let social of frameworkConfigService.socialLogins"> 
+              <button >
+                <a [(ngModel)]="social.title" (click)="test(social.title)" ngDefaultControl name={{social.title}} class="btn btn-block btn-lg btn-social"><img 
+                  style="margin-right:10px"
+                  class="social-image"   
+                  [src]="social.imageFile"
+                  [alt]="social.alt"
+                  >Login with {{social.title}}
+                </a>
+              </button>
+              <p></p>
+            </div>
+          </span>-->
+      </div>
+    </div>
+	</form>
+
+  <button title="Facebook" (click)="onFacebookAuth()" class="btn btn-social btn-block btn-facebook">
+    <i class="fa fa-facebook"></i> Sign in with Facebook
+  </button>
+  <button title="Google" (click)="onSocialLogin('google')" class="btn btn-block btn-social btn-google">
+    <i class="fa fa-google"></i> Sign in with Google
+  </button>
+  <button title="Linkedin" (click)="onSocialLogin('linkedin')" class="btn btn-block btn-social btn-linkedin">
+    <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+  </button>
+
+  <div *ngIf="!submitting">
+    <p>Register<a routerLink="/register"> here</a> or go back <a [routerLink]="['']"> home</a>.</p> 
+  </div>
+  <div *ngIf="submitting">
+    <p class="message">Loging In...</p>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,108 @@
+<div class="register-form" @fadeInAnimation>
+  <img class="center-block" [src]="frameworkConfigService.logo" width=200px/>
+  <hr/>
+  <h4><span class="fa fa-sign-in"></span> Register</h4>
+  <form #registerForm="ngForm" (ngSubmit)="onRegisterSubmit(registerForm)" novalidate>
+    <div class="form-group">
+			<input 
+        type="text" 
+        class="form-control" 
+        name="firstname" 
+        placeholder="First name" 
+        required="required" 
+        ngModel #firstname="ngModel">
+      <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched)" class="alert alert-danger">
+        <div [hidden]="!firstname.errors.required">
+          First name is required!
+        </div>
+      </div>
+		</div>
+    <div class="form-group">
+			<input 
+        type="text" 
+        class="form-control" 
+        name="lastname" 
+        placeholder="Last name" 
+        required="required" 
+        ngModel #lastname="ngModel">
+      <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched)" class="alert alert-danger">
+        <div [hidden]="!lastname.errors.required">
+          Last name is required!
+        </div>
+      </div>
+		</div>
+    <div class="form-group">
+      <input 
+        type="email" 
+        class="form-control" 
+        name="email" 
+        placeholder="Email" 
+        required="required" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" 
+        ngModel #email="ngModel">
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required">
+          Email is required!
+        </div>
+        <div [hidden]="!email.errors.pattern">
+          Email is not valid! 
+        </div>
+		  </div>
+		</div>
+		<div class="form-group">
+			<input 
+        type="password"
+        class="form-control" 
+        name="password" 
+        placeholder="Password" 
+        required="required"
+        ngModel #password="ngModel"
+        [pattern]=registerForm.value.password2
+        >
+      <!--<div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+        <div [hidden]="!password.errors.required">
+          Password is required! 
+        </div>
+      </div>-->
+		</div>
+    <div class="form-group">
+			<input 
+        type="password" 
+        class="form-control"   
+        name="password2" 
+        placeholder="Repeat password" 
+        required="required" 
+        ngModel #password2="ngModel"
+        [pattern]=registerForm.value.password 
+        >
+      <div *ngIf="password2.errors && (password2.dirty || password2.touched)" class="alert alert-danger">
+        <div [hidden]="!password2.errors.required">
+          Password is required! 
+        </div>
+        <div [hidden]="!password2.errors.pattern">
+          Passwords dont match!! 
+        </div>
+      </div>
+		</div>
+    <div *ngIf="formError" class="alert alert-danger">
+      {{ formError }}
+    </div>    
+    <div *ngIf="formMsg" class="alert alert-info">
+      {{ formMsg }}
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="!submitting">
+        <button type="submit" class="btn btn-block btn-default" [disabled]="!registerForm.form.valid">Register</button>
+      </div>
+      <div *ngIf="submitting">
+        <p class="message">Signing Up...</p>
+      </div>
+    </div>
+    
+	</form>
+ 
+  <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+	<p>Or go <a [routerLink]="['/']">home</a>.</p>
+</div>
+

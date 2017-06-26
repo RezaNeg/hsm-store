@@ -1,0 +1,8 @@
+:host{
+    padding: 25px;
+}
+.profile-details{
+    width: 250px;
+    display: inline-block;
+    margin-right: 15px;
+}

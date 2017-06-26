@@ -1,0 +1,62 @@
+<div class="container" @fadeInAnimation>
+  <div *ngIf="this.userService.currentUser">
+    <div class="page-header text-center">
+      <h1><span class="fa fa-anchor"></span> {{this.userService.currentUser.firstname | uppercase}}'s Profile Page</h1>
+    </div>
+
+    <div class="row">
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-3">
+        <div  class="well" style="word-wrap:break-word;">
+          <h3><span class="fa fa-user"></span> Local</h3>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>ID:</strong> {{userService.currentUser.id}}</li>
+            <li class="list-group-item"><strong>First name:</strong> {{userService.currentUser.firstname}}</li>
+            <li class="list-group-item"><strong>Last name:</strong> {{userService.currentUser.lastname}}</li>
+            <li class="list-group-item"><strong>Token:</strong> {{userService.authToken}}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{userService.currentUser.email}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FACEBOOK INFORMATION -->
+      <div class="col-sm-3">
+        <div  class="well" style="word-wrap:break-word;">
+          <h3 class="facebook"><span class="fa fa-facebook"></span> Facebook</h3>
+          <ul class="list-group" *ngIf="userService.currentUser.f_id">
+            <li class="list-group-item"><strong>ID:</strong> {{userService.currentUser.id}}</li>
+            <li class="list-group-item"><strong>f-id:</strong> {{userService.currentUser.f_id}}</li>
+            <li class="list-group-item"><strong>Display name:</strong> {{userService.currentUser.f_name}}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{userService.currentUser.email}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GOOGLE INFORMATION -->
+      <div class="col-sm-3">
+        <div  class="well" style="word-wrap:break-word;">
+          <h3 class="google-plus"><span class="fa fa-google-plus"></span> Google</h3>
+          <ul class="list-group" *ngIf="userService.currentUser.g_id">
+            <li class="list-group-item"><strong>ID:</strong> {{userService.currentUser.id}}</li>
+            <li class="list-group-item"><strong>g-id:</strong> {{userService.currentUser.g_id}}</li>
+            <li class="list-group-item"><strong>Display name:</strong> {{userService.currentUser.g_name}}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{userService.currentUser.email}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TWITTER INFORMATION -->
+      <div class="col-sm-3">
+        <div class="well" style="word-wrap:break-word;">
+          <h3 class="twitter"><span class="fa fa-linkedin"></span> LinkedIn</h3>
+          <ul class="list-group" *ngIf="userService.currentUser.l_id">
+            <li class="list-group-item"><strong>ID:</strong> {{userService.currentUser.id}}</li>
+            <li class="list-group-item"><strong>t-id:</strong> {{userService.currentUser.l_id}}</li>
+            <li class="list-group-item"><strong>Display name:</strong> {{userService.currentUser.l_name}}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{userService.currentUser.email}}</li>
+          </ul>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.form-control {
+  position:relative;
+  margin-top:30px;
+  width:100%;
+  border:none;
+
+}
+
+input {
+  border:none;
+  border-bottom:2px solid #34495e;
+  padding:10px 0;
+  width:100%;
+  display:block;
+  font-size:16px;
+  /*outline:none;*/
+}
+
+input:focus{
+  border:none;
+  outline:none;
+}
+
+input:focus ~ label, .form-control input:valid ~ label  {
+  top:-10px;
+  font-size:12px;
+  left:0px;
+  color:#111;
+}
+
+label {
+  position:absolute;
+  top:8px;
+  left:5px;
+  font-size:16px;
+  color:#333;
+  transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.bar {
+  position:relative;
+  width:100%;
+  display:block;
+}
+
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:0px; 
+  position:absolute;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.bar:before {
+  left:50%;
+}
+
+.bar:after {
+  right:50%; 
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+input:valid ~ .bar:before, input:valid ~ .bar:after, input:valid ~ .bar{
+  background: green;  
+}
+
+input:invalid ~ .bar:before, input:invalid ~ .bar:after{
+  background: red;  
+}
+
+input:invalid{
+  color: red;
+}
+
+
+a.facebook, a.google-plus, a.twitter, a.signup{
+  width: 24.1%;
+  height:40px;
+}
+
+a.facebook{
+  background-color: #3b5998;
+  align-content: left;
+}
+a.google-plus{
+  background-color: #d34836;
+}
+a.twitter{
+  background-color: #0084b4";
+}
+a.signup{
+  align-content: right;
+}
