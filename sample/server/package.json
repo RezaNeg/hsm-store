@@ -1,8 +1,27 @@
 {
-  "name": "hsm-store-server-sample",
-  "version": "0.0.1",
-  "description": "This is a sample on how to use the hsm-store module!",
-  "dependencies" : {
-    "hsm-store" : "*"
-  }
+  "name": "hsm_ng_login",
+  "version": "1.0.0",
+  "description": "HSM MEAN APP-SERVER SIDE",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "dependencies":{
+    "express": "*",
+    "bcrypt": "*",
+    "body-parser": "*",
+    "compression": "*",
+    "cookie-parser": "*",
+    "dotenv": "*",
+    "express-session": "*",
+    "morgan": "*",
+    "mysql": "*",
+    "sequelize": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Reza",
+  "license": "ISC"
 }
